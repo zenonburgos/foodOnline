@@ -110,10 +110,10 @@ class UserProfile(models.Model):
         return self.user.email
 
 
-    def save(self, *args, **kwargs):
-        if self.latitude and self.longitude:
-            self.location = Point(float(self.longitude), float(self.latitude))
-            return super(UserProfile, self).save(*args, **kwargs)
-        return super(UserProfile, self).save(*args, **kwargs)
+    # def save(self, *args, **kwargs):
+    #     if self.latitude and self.longitude:
+    #         self.location = Point(float(self.longitude), float(self.latitude))
+    #         return super(UserProfile, self).save(*args, **kwargs)
+    #     return super(UserProfile, self).save(*args, **kwargs)
 
 
