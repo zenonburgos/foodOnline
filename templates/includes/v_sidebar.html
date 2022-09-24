@@ -1,0 +1,16 @@
+<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+    <div class="user-account-nav user-account-sidebar">
+        <div class="user-nav-list">
+            <ul>
+                <li class="{% if '/accounts/vendorDashboard/' == request.path or '/accounts/vendor/' == request.path %}active{% endif %}"><a href="{% url 'vendorDashboard' %}"><i class="icon-dashboard3"></i>Dashboard</a></li>
+                <li class="{% if 'profile' in request.path %}active{% endif %}"><a href="{% url 'vprofile' %}""><i class="icon-building"></i>Mi Restaurante</a></li>
+                <li><a href="restaurant-menu-builder.html"><i class="icon-menu5"></i>Constructor de menú</a></li>
+                <li><a href="restaurant-orders.html"><i class="icon-add_shopping_cart"></i>Órdenes</a></li>
+                <li><a href="restaurant-earnings.html"><i class="icon-money"></i>Ganancias</a></li>
+                <li><a href="restaurant-statement.html"><i class="icon-file-text22"></i>Statement</a></li>
+                <li><a href="restaurant-change-password.html"><i class="icon-unlock-alt"></i>Cambiar Contraseña</a></li>
+                <li><a class="logout-btn" href="registration.html"><i class="icon-log-out"></i>Desconectarse</a></li>
+            </ul>
+        </div>
+    </div>
+</div>

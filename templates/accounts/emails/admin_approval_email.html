@@ -1,0 +1,13 @@
+{% autoescape off %}
+
+Hi {{user.first_name}},
+
+{% if is_approved %}
+¡Felicidades! Su restaurante ha sido aprobado por nuestro equipo administrador. --TiquiFood
+{% else %}
+Lo sentimos :( No ha sido elegible para publicar su menú en nuestro marketplace. Contacte a support@tiquifood.com para más detalles. --TiquiFood
+{% endif %}
+
+
+
+{% endautoescape %}
