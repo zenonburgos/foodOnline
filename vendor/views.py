@@ -83,8 +83,9 @@ def add_category(request):
             category_name = form.cleaned_data['category_name']
             category = form.save(commit=False) #Los datos están guardados pero no almacenados (commited)
             category.vendor = get_vendor(request)
-            category.slug = slugify(category_name)
-            form.save()
+            form.save() # Category ID will be generated
+            category.slug = slugify(category_name)+'-'+str(category.id) # e.g: chiken-15
+            form.save() # Ahora salvamos de nuevo
             messages.success(request, 'Categoría agregada.')
             return redirect('menu_builder')
         else:
