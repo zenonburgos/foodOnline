@@ -74,8 +74,8 @@
 			<div class="row">
 				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 					<div class="element-title align-left">
-						<h2>Top Restaurants</h2>
-						<p>Explore restaurants, bars, and cafés by locality</p>
+						<h2>Los Mejores Restaurantes</h2>
+						<p>Explore restaurantes, bars, y cafés por localidad</p>
 					</div>
 				</div>
 				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding-right: 0 !important; padding-left: 0 !important;">
@@ -85,9 +85,9 @@
 							<li class="has-border">
 								<figure>
 									{% if vendor.user_profile.profile_picture %}
-										<a href="#"><img src="{{ vendor.user_profile.profile_picture.url }}" class="attachment-full size-full wp-post-image" alt=""></a>
+										<a href="{% url 'vendor_detail' vendor.vendor_slug %}"><img src="{{ vendor.user_profile.profile_picture.url }}" class="attachment-full size-full wp-post-image" alt=""></a>
 									{% else %}
-										<a href="#"><img src="{% static 'images/default-profile.png' %}" class="attachment-full size-full wp-post-image" alt=""></a>
+										<a href="{% url 'vendor_detail' vendor.vendor_slug %}"><img src="{% static 'images/default-profile.png' %}" class="attachment-full size-full wp-post-image" alt=""></a>
 									{% endif %}
 								</figure>
 							</li>
@@ -117,7 +117,7 @@
 								<div class="list-post featured">
 									<div class="img-holder">
 										<figure>
-											<a href="#">
+											<a href="{% url 'vendor_detail' vendor.vendor_slug %}">
 												{% if vendor.user_profile.profile_picture %}
 													<img src="{{ vendor.user_profile.profile_picture.url }}" class="img-thumb wp-post-image" alt="">
 												{% else %}
@@ -132,11 +132,16 @@
 									<div class="text-holder">										
 										<div class="post-title">
 											<h5>
-												<a href="listing-detail.html">{{ vendor }}</a>
+												<a href="{% url 'vendor_detail' vendor.vendor_slug %}">{{ vendor }}</a>
 											</h5>
 										</div>
 										{% if vendor.user_profile.city and vendor.user_profile.state %}
 											<span>{{ vendor.user_profile.city }}, {{ vendor.user_profile.state }}</span>
+										{% endif %}
+
+										{% if vendor.kms %}
+											<br>
+											<span><small>A <b>{{vendor.kms}} km </b>de tu localidad.</small></span>
 										{% endif %}
 									</div>									
 								</div>
