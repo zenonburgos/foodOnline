@@ -95,9 +95,12 @@
                                                     <span id="total">{{ grand_total }}</span>
                                                 </span>
                                             </li>
-
+                                            {% if order.payment_method == 'PayPal' %}
                                             <!-- PayPal Checkout Button -->
                                             <div id="paypal-button-container"></div>
+                                            {% elif order.payment_method == 'Wompi' %}
+                                            <button class="btn btn-warning w-100 p-2">Pague con Tarjeta del Banco Agrícola</button>
+                                            {% endif %}
                                         </ul>
                                     </div>
                                     
