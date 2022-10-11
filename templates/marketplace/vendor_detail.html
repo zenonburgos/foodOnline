@@ -76,7 +76,7 @@
                             <h6><i class="icon-restaurant_menu"></i>Categorías</h6>
                             <ul class="menu-list">
                                 {% for category in categories %}
-                                    <li class="active"><a href="#" class="menu-category-link"> {{ category }} </a></li>
+                                    <li class="active"><a href="#category-{{forloop.counter}}" class="menu-category-link"> {{ category }} </a></li>
                                 {% endfor %}
                             </ul>
                         </div>
@@ -95,7 +95,7 @@
                                     <div id="menu-item-list-6272" class="menu-itam-list">
                                         
                                         {% for category in categories %}
-                                        <div class="element-title" id="menu-category-2">
+                                        <div class="element-title" id="category-{{forloop.counter}}">
                                             <h5 class="text-color">{{ category }}</h5>
                                             <span>{{ category.description }}</span>
                                         </div>
