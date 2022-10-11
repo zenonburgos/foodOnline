@@ -67,7 +67,6 @@ class Order(models.Model):
         subtotal = 0
         tax = 0
         tax_dict = {}
-
         if self.total_data:
             total_data = json.loads(self.total_data)
             data = total_data.get(str(vendor.id))
